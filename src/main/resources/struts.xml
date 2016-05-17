@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>  
+	
+	<!-- <package name="json" namespace="/json" extends="json-default">
+		<action name="category_json" class="cn.edu.zju.cst.ideas.action.CategoryAction" method="category">
+			<result type="json"/>
+		</action>
+	</package> -->
+	
+	
+	
+	<!--  <package name="emp" extends="struts-default">
+
+		<action name="emp_*" class="cn.edu.zju.cst.ideas.action.EmployeeAction" method="{1}">
+			<result name="list">/WEB-INF/pages/inedx.jsp</result>
+		</action>
+
+	</package> -->
+	<package name="default" namespace="/" extends="struts-default"> 
+
+		<!-- <action name="role_*" class="roleAction" method="{1}">
+			<result	name="list"></result>
+		</action> -->
+		<default-action-ref name="index"></default-action-ref>
+		
+		<action name="index" class="cn.edu.zju.cst.ideas.action.IndexAction" method="index">
+			<result name="index">/WEB-INF/pages/index.jsp</result>
+		</action>
+		 
+		<action name="header" class="cn.edu.zju.cst.ideas.action.HeaderAction" method="header">
+			<result name="header">/WEB-INF/pages/header.jsp</result>
+		</action>
+		<action name="footer" class="cn.edu.zju.cst.ideas.action.FooterAction" method="footer">
+			<result name="footer">/WEB-INF/pages/footer.jsp</result>
+		</action>
+		
+		
+		<action name="search" class="cn.edu.zju.cst.ideas.action.SearchAction" method="search">
+			<result name="search">/WEB-INF/pages/searchresult.jsp</result>
+		</action>
+		<action name="category" class="cn.edu.zju.cst.ideas.action.CategoryAction" method="category">
+			<result name="category">/WEB-INF/pages/categories.jsp</result>
+		</action>
+		<action name="product" class="cn.edu.zju.cst.ideas.action.ProductAction" method="product">
+			<result name="product">/WEB-INF/pages/product.jsp</result>
+		</action>
+		
+
+		<action name="jsonTest" class="cn.edu.zju.cst.ideas.action.CategoryAction" method="categoryJson">
+		</action> 
+		<action name="jsonProduct" class="cn.edu.zju.cst.ideas.action.ProductAction" method="productJson">
+		</action> 
+	</package>
+
+
+	<!-- Add packages here -->
+
+</struts>
